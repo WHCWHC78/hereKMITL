@@ -46,27 +46,35 @@ html(lang='en')
         li.active(data-target='#myCarousel', data-slide-to='0')
         li(data-target='#myCarousel', data-slide-to='1')
         li(data-target='#myCarousel', data-slide-to='2')
+        li(data-target='#myCarousel', data-slide-to='3')
+        li(data-target='#myCarousel', data-slide-to='4')
       .carousel-inner
         .item.active
-          img(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='First slide')
-          .container
-            .carousel-caption
-              h1 Example headline.
-              p
-                | Note: If you&apos;re viewing this page via a 
-                code file://
-                |  URL, the &quot;next&quot; and &quot;previous&quot; Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.
-              p
-                a.btn.btn-lg.btn-primary(href='#', role='button') Sign up today
-        .item
-          //img(src='data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Second slide')
           img(src="assets/images/background.jpg", alt="background")
           .container
             .carousel-caption
               h1 Another example headline.
               p
                 | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+             // p
+                a.btn.btn-lg.btn-primary(href='#', role='button') Learn more
+        .item
+          img(src="assets/images/slide5.jpg", alt="background")
+          .container
+            .carousel-caption
+              h1 Another example headline.
               p
+                | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+             // p
+                a.btn.btn-lg.btn-primary(href='#', role='button') Learn more
+        .item
+          img(src="assets/images/slide4.jpg", alt="background")
+          .container
+            .carousel-caption
+              h1 Another example headline.
+              p
+                | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+             // p
                 a.btn.btn-lg.btn-primary(href='#', role='button') Learn more
         .item
           img(src='assets/images/slide2.jpg' style="height:auto;" alt='Third slide')
@@ -75,7 +83,7 @@ html(lang='en')
               h1 One more for good measure.
               p
                 | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-              p
+             // p
                 a.btn.btn-lg.btn-primary(href='#', role='button') Browse gallery
       a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
         span.glyphicon.glyphicon-chevron-left
