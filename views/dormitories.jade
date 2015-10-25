@@ -1,0 +1,37 @@
+extends ./layout.jade
+
+block fstContent
+    img.img-responsive(src="assets/images/dormitories.jpg")
+
+block sndContent
+    table.table-striped.table-bordered(style="width:100%;")
+        thead
+            tr
+                th.text-center(rowspan="2")
+                    | ชื่อหอพัก
+                th.text-center(rowspan="2")
+                    | เบอร์โทรศัพท์
+                th.text-center(rowspan="2")
+                    | ค่าเช่า
+                th.text-center(colspan="4")
+                    | รายละเอียด
+            tr
+                th.text-center
+                    | สิ่งอำนวยความสะดวก
+                th.text-center
+                    | ค่ามัดจำ
+                th.text-center
+                    | ค่าไฟ/ยูนิต
+                th.text-center
+                    | ค่าน้ำ/ยูนิต
+        tbody
+            for record in records
+                tr
+                    td=record.name
+                    td=record.tel
+                    td=record.price
+                    td=record.probs
+                    td=record.deposit
+                    td=record.elect
+                    td=record.water
+

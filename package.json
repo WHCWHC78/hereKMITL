@@ -1,0 +1,26 @@
+{
+  "name": "here-is-kmitl",
+  "version": "0.1.0",
+  "description": "Wanna know about KMITL more than ever? Just use it.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "csurf": "latest",
+    "dateformat": "^1.0.11",
+    "express": "latest",
+    "forms": "latest",
+    "gridfs-stream": "^1.1.1",
+    "jade": "latest",
+    "multer": "^1.0.6",
+    "nodemon": "^1.7.1",
+    "xtend": "latest"
+  },
+  "keywords": [
+    "kmitl",
+    "KMITL"
+  ],
+  "author": "N. Srikote",
+  "license": "MIT"
+}

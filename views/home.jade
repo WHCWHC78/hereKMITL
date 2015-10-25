@@ -1,0 +1,163 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    link(rel='icon', href='assets/icon/favicon.ico')
+    title=title
+    // Bootstrap core CSS
+    link(href='assets/css/bootstrap.css', rel='stylesheet')
+    link(href='assets/css/carousel.css', rel='stylesheet')
+  //body(style="background-color:#F9D479")
+  //body
+  body(style="background-image:url(assets/images/background2.jpg); background-position:bottom")
+    .navbar-wrapper
+      .container
+        .navbar.navbar-inverse.navbar-fixed-top(role="navigation")
+          .container
+            .navbar-header
+              button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            .navbar-collapse.collapse
+              ul.nav.navbar-nav
+                li
+                  a(href='/allDormitories' style="color:#D35400") ตึก/อาคารเรียน
+                li
+                  a(href='/allBuildings' style="color:#D35400") หอพัก
+                li
+                  a(href='/allCafeterias' style="color:#D35400") ร้านอาหาร
+                li
+                  a(href='/allDormitories' style="color:#D35400") สถานที่ออกกำลังกาย
+                li
+                  a(href='/allBuildings' style="color:#D35400") พุทธศาสนสถาน
+                li
+                  a(href='/allCafeterias' style="color:#D35400") อื่นๆ
+    // Carousel
+    // ==================================================
+    #myCarousel.carousel.slide(data-ride='carousel')
+      // Indicators
+      ol.carousel-indicators
+        li.active(data-target='#myCarousel', data-slide-to='0')
+        li(data-target='#myCarousel', data-slide-to='1')
+        li(data-target='#myCarousel', data-slide-to='2')
+      .carousel-inner
+        .item.active
+          img(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='First slide')
+          .container
+            .carousel-caption
+              h1 Example headline.
+              p
+                | Note: If you&apos;re viewing this page via a 
+                code file://
+                |  URL, the &quot;next&quot; and &quot;previous&quot; Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.
+              p
+                a.btn.btn-lg.btn-primary(href='#', role='button') Sign up today
+        .item
+          //img(src='data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', alt='Second slide')
+          img(src="assets/images/background.jpg", alt="background")
+          .container
+            .carousel-caption
+              h1 Another example headline.
+              p
+                | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+              p
+                a.btn.btn-lg.btn-primary(href='#', role='button') Learn more
+        .item
+          img(src='assets/images/slide2.jpg' style="height:auto;" alt='Third slide')
+          .container
+            .carousel-caption
+              h1 One more for good measure.
+              p
+                | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+              p
+                a.btn.btn-lg.btn-primary(href='#', role='button') Browse gallery
+      a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
+        span.glyphicon.glyphicon-chevron-left
+      a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
+        span.glyphicon.glyphicon-chevron-right
+    // /.carousel
+    
+    // Marketing messaging and featurettes
+    // ==================================================
+    // Wrap the rest of the page in another container to center all the content.
+    .container.marketing
+      // Three columns of text below the carousel
+      .row
+        .col-lg-4
+          img.img-circle(src='assets/images/background.jpg', alt='Generic placeholder image', style='width: 140px; height: 140px;')
+          h2 สถานที่ออกกำลังกาย
+          p
+           | ลาดกระบัง มีแหล่งรวมนักศึกษาและบุคลากรที่รักสุขภาพ เพื่อออกกำลังกายหรืออกมาเดินเล่น พักผ่อนกาย ใจ และสมอง จากการเรียนและการทำงานมากมาย ที่เต็มไปด้วยธรรมชาติและอากาศที่บริสุทธิ์...
+        // /.col-lg-4
+        .col-lg-4
+          img.img-circle(src='assets/images/dormitorySample.jpg' alt='Generic placeholder image', style='width: 140px; height: 140px;')
+          h2 หอพัก
+          p
+            | ลาดกระบัง มีหอพักที่สะอาด สะดวก อุปกรณ์ตกแต่งห้องครบครันอยู่ด้วยกันหลายที่ ไม่ว่าจะเป็น โซนเกกีงาม โซนRNP  โซนจินดา โซนราชพฤษ ฯลฯ...
+        // /.col-lg-4
+        .col-lg-4
+          img.img-circle(src='assets/images/cafeteriaSample.jpg' alt='Generic placeholder image', style='width: 140px; height: 140px;')
+          h2 ร้านอาหาร
+          p
+            | ร้านอาหาร ร้านขนมหวาน ร้านเครื่องดื่มที่ว่าเด็ดที่ว่าโดน ได้รับการันตีจากปากผู้เชี่ยวชาญด้านการกินในลาดกระบัง ได้รวมอยู่ในเว็บแล้ว ร้านที่ลาดกระบังนอกจากรสชาติที่ว่าเด็ดแล้ว บรรกาศร้านยังดูกตกแต่งได้อย่างลงตัว...
+      .row
+        .col-lg-4
+          p
+            a.btn.btn-warning(href='#', role='button') View details &raquo;
+        .col-lg-4
+          p
+            a.btn.btn-warning(href='#', role='button') View details &raquo;
+        .col-lg-4
+          p
+            a.btn.btn-warning(href='#', role='button') View details &raquo;
+      hr
+      .row
+        .col-lg-4
+          img.img-circle(src='assets/images/buildingSample.jpg' alt='Generic placeholder image', style='width: 140px; height: 140px;')
+          h2 ตึก/อาคารเรียน
+          p
+            | ตึกและอาคารเรียนที่ลาดกระบัง มีมากกว่า20ตึกเรียน หลายคนยังคงสงสัยและมีคำถามมากมายว่าตึกอะไรคือตึกอะไร และตึกนี้เป็นของคณะอะไรต่อไปคำถามเหล่านี้จะหมดไปเพราะเว็บไซด์เราได้รวบรวมข้อมูลไว้หมดแล้ว...
+        // /.col-lg-4
+        .col-lg-4
+          img.img-circle(src='assets/images/wadSample.jpg' alt='Generic placeholder image', style='width: 140px; height: 140px;')
+          h2 พุทธศาสนสถาน
+          p
+            | วัดคือแหล่งยึดเหนี่ยวจิตใจ พักผ่อนจิตใจของชาวลาดกระบัง ไม่ว่าเทศกาลหรืองานบุญต่างๆทางพุทธศาสนา ชาวลาดกระบังเราก็จะพร้อมใจกันไปวัด...
+        // /.col-lg-4
+        .col-lg-4
+          img.img-circle(src='assets/images/etcSample.jpg' alt='Generic placeholder image', style='width: 140px; height: 140px;')
+          h2 อื่นๆ
+          p
+            | สถานที่ที่น่าสนใจ และสิ่งที่เป็นไฮไลน์ของลาดกระบังยังมีอีกมากมาย ไม่ว่าจะเป็น...
+      .row
+        .col-lg-4
+          p
+            a.btn.btn-warning(href='#', role='button') View details &raquo;
+        .col-lg-4
+          p
+            a.btn.btn-warning(href='#', role='button') View details &raquo;
+        .col-lg-4
+          p
+            a.btn.btn-warning(href='#', role='button') View details &raquo;
+      // FOOTER
+      footer
+        p.pull-right
+          a(href='#') Back to top
+        p
+          | &copy; Powered by CSAG,  &middot; 
+          a(href='#') Privacy
+          |  &middot; 
+          a(href='#') Terms
+    // /.container
+    
+    // Bootstrap core JavaScript
+    // ==================================================
+    // Placed at the end of the document so the pages load faster
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    script(src='assets/js/bootstrap.min.js')

@@ -1,0 +1,43 @@
+extends ./layout.jade
+
+block fstContent
+          .row
+            .col-lg-6.col-lg-offset-3
+              form(action='/insert', method='POST', enctype="multipart/form-data")
+                .form-group
+                  label Topic
+                  |                                 
+                  select.form-control(name='topic')
+                    option(value='dormitory') หอพัก
+                    |                                     
+                    option(value='building') ตึก/อาคารเรียน
+                    |                                     
+                    option(value='cafeteria') ร้านอาหาร
+                    |                                     
+                    option(value='workout') สถานที่ออกกำลังกาย
+                |                             
+                .form-group
+                  label Header
+                  |                                 
+                  input.form-control(name='header')
+                |                             
+                .form-group
+                  label Detail
+                  |                                 
+                  textarea.form-control(name='detail', rows='3')
+                |                             
+                .form-group
+                  label Open/Close time
+                  |                                 
+                  input.form-control(name='time', type='date')
+                |  
+                .form-group
+                  label Images
+                  |                                 
+                  input(name='images', type='file', multiple="multiple", accept="image/*")
+                |  
+                button#submit.btn.btn-success(type='submit') Submit
+
+block sndContent
+    p
+        | ...
