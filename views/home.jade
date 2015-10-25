@@ -9,7 +9,7 @@ html(lang='en')
     link(rel='icon', href='assets/icon/favicon.ico')
     title=title
     // Bootstrap core CSS
-    link(href='assets/css/bootstrap.css', rel='stylesheet')
+    link(href='assets/css/bootstrap.min.css', rel='stylesheet')
     link(href='assets/css/carousel.css', rel='stylesheet')
   //body(style="background-color:#F9D479")
   //body
@@ -27,20 +27,20 @@ html(lang='en')
             .navbar-collapse.collapse
               ul.nav.navbar-nav
                 li
-                  a(href='/allDormitories' style="color:#D35400") ตึก/อาคารเรียน
+                  a(href='/allDormitories' ) ตึก/อาคารเรียน
                 li
-                  a(href='/allBuildings' style="color:#D35400") หอพัก
+                  a(href='/allBuildings' ) หอพัก
                 li
-                  a(href='/allCafeterias' style="color:#D35400") ร้านอาหาร
+                  a(href='/allCafeterias') ร้านอาหาร
                 li
-                  a(href='/allDormitories' style="color:#D35400") สถานที่ออกกำลังกาย
+                  a(href='/allDormitories' ) สถานที่ออกกำลังกาย
                 li
-                  a(href='/allBuildings' style="color:#D35400") พุทธศาสนสถาน
+                  a(href='/allBuildings' ) พุทธศาสนสถาน
                 li
-                  a(href='/allCafeterias' style="color:#D35400") อื่นๆ
+                  a(href='/allCafeterias' ) อื่นๆ
     // Carousel
     // ==================================================
-    #myCarousel.carousel.slide(data-ride='carousel')
+    #myCarousel.carousel.slide(data-ride='carousel' /*style="height:100vh;"*/)
       // Indicators
       ol.carousel-indicators
         li.active(data-target='#myCarousel', data-slide-to='0')
@@ -51,7 +51,7 @@ html(lang='en')
       .carousel-inner
         .item.active
           img(src="assets/images/background.jpg", alt="background")
-          .container
+          //.container
             .carousel-caption
               h1 Another example headline.
               p
@@ -60,7 +60,7 @@ html(lang='en')
                 a.btn.btn-lg.btn-primary(href='#', role='button') Learn more
         .item
           img(src="assets/images/slide5.jpg", alt="background")
-          .container
+          //.container
             .carousel-caption
               h1 Another example headline.
               p
@@ -69,7 +69,7 @@ html(lang='en')
                 a.btn.btn-lg.btn-primary(href='#', role='button') Learn more
         .item
           img(src="assets/images/slide4.jpg", alt="background")
-          .container
+          //.container
             .carousel-caption
               h1 Another example headline.
               p
@@ -78,7 +78,7 @@ html(lang='en')
                 a.btn.btn-lg.btn-primary(href='#', role='button') Learn more
         .item
           img(src='assets/images/slide2.jpg' style="height:auto;" alt='Third slide')
-          .container
+          //.container
             .carousel-caption
               h1 One more for good measure.
               p
@@ -133,7 +133,7 @@ html(lang='en')
             | ตึกและอาคารเรียนที่ลาดกระบัง มีมากกว่า20ตึกเรียน หลายคนยังคงสงสัยและมีคำถามมากมายว่าตึกอะไรคือตึกอะไร และตึกนี้เป็นของคณะอะไรต่อไปคำถามเหล่านี้จะหมดไปเพราะเว็บไซด์เราได้รวบรวมข้อมูลไว้หมดแล้ว...
         // /.col-lg-4
         .col-lg-4
-          img.img-circle(src='assets/images/wadSample.jpg' alt='Generic placeholder image', style='width: 140px; height: 140px;')
+          img.img-circle(src='assets/images/slide4.jpg' alt='Generic placeholder image', style='width: 140px; height: 140px;')
           h2 พุทธศาสนสถาน
           p
             | วัดคือแหล่งยึดเหนี่ยวจิตใจ พักผ่อนจิตใจของชาวลาดกระบัง ไม่ว่าเทศกาลหรืองานบุญต่างๆทางพุทธศาสนา ชาวลาดกระบังเราก็จะพร้อมใจกันไปวัด...
