@@ -9,7 +9,7 @@ html(lang='en')
     link(rel='icon', href='assets/icon/favicon.ico')
     title=title
     // Bootstrap core CSS
-    link(href='assets/css/bootstrap.min.css', rel='stylesheet')
+    link(href='assets/css/bootstrap.css', rel='stylesheet')
     link(href='assets/css/carousel.css', rel='stylesheet')
   //body(style="background-color:#F9D479")
   //body
@@ -27,17 +27,17 @@ html(lang='en')
             .navbar-collapse.collapse
               ul.nav.navbar-nav
                 li
-                  a(href='/allDormitories' ) ตึก/อาคารเรียน
+                  a(href='/allBuildings' ) ตึก/อาคารเรียน
                 li
-                  a(href='/allBuildings' ) หอพัก
+                  a(href='/allDormitories' ) หอพัก
                 li
                   a(href='/allCafeterias') ร้านอาหาร
                 li
-                  a(href='/allDormitories' ) สถานที่ออกกำลังกาย
+                  a(href='/allWorkouts' ) สถานที่ออกกำลังกาย
                 li
-                  a(href='/allBuildings' ) พุทธศาสนสถาน
+                  a(href='#' ) พุทธศาสนสถาน
                 li
-                  a(href='/allCafeterias' ) อื่นๆ
+                  a(href='#' ) อื่นๆ
     // Carousel
     // ==================================================
     #myCarousel.carousel.slide(data-ride='carousel' /*style="height:100vh;"*/)
@@ -47,19 +47,9 @@ html(lang='en')
         li(data-target='#myCarousel', data-slide-to='1')
         li(data-target='#myCarousel', data-slide-to='2')
         li(data-target='#myCarousel', data-slide-to='3')
-        li(data-target='#myCarousel', data-slide-to='4')
       .carousel-inner
         .item.active
-          img(src="assets/images/background.jpg", alt="background")
-          //.container
-            .carousel-caption
-              h1 Another example headline.
-              p
-                | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-             // p
-                a.btn.btn-lg.btn-primary(href='#', role='button') Learn more
-        .item
-          img(src="assets/images/slide5.jpg", alt="background")
+          img(src="assets/images/slide5.jpg" style="height:auto;" alt="background")
           //.container
             .carousel-caption
               h1 Another example headline.
@@ -76,6 +66,15 @@ html(lang='en')
                 | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
              // p
                 a.btn.btn-lg.btn-primary(href='#', role='button') Learn more
+        .item
+          img(src='assets/images/slide3.jpg' style="height:auto;" alt='Third slide')
+          //.container
+            .carousel-caption
+              h1 One more for good measure.
+              p
+                | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+             // p
+                a.btn.btn-lg.btn-primary(href='#', role='button') Browse gallery
         .item
           img(src='assets/images/slide2.jpg' style="height:auto;" alt='Third slide')
           //.container

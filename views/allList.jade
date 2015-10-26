@@ -1,0 +1,44 @@
+extends ./layout.jade
+
+block body
+    for record in records
+        .row
+          .col-lg-12
+             .panel.panel-default
+               .panel-heading
+                 h3.panel-title=record.header
+               .panel-body
+                .row
+                  .col-lg-4
+                    #carouselIndiv.carousel.slide(data-ride='carousel')
+                        ol.carousel-indicators
+                          -var index = 0
+                          each img in record.images 
+                              if index++ == 0
+                                  li.active(data-target='#carouselIndiv', data-slide-to='0')
+                              else 
+                                  li(data-target='#carouselIndiv', data-slide-to='#{index - 1}')
+                        // Wrapper for slides
+                        .carousel-inner(role='listbox')
+                          -var index = 0
+                          each img in record.images 
+                              if index++ == 0
+                                  .item.active
+                                      img(src=''+img, alt='...')
+                              else
+                                  .item
+                                      img(src=''+img, alt='...')
+                        // Controls
+                        a.left.carousel-control(href='#carouselIndiv', role='button', data-slide='prev')
+                          span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+                          |     
+                          span.sr-only Previous
+                        |   
+                        a.right.carousel-control(href='#carouselIndiv', role='button', data-slide='next')
+                          span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+                          |     
+                          span.sr-only Next
+                  .col-lg-8
+                    h3=record.header 
+                    p=record.detail
+                    h6=record.time

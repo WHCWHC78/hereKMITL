@@ -63,15 +63,15 @@ app.get('/allBuildings', function(req, res) {
     });
 });
 
-app.get('/allCafeterias', function(req, res) {
-    var str = req.url.replace('/', '');
-
-    res.render(str, {
-        title: appName,
-        topic: "ร้านอาหาร",
-        active: str
-    });
-});
+//app.get('/allCafeterias', function(req, res) {
+//    var str = req.url.replace('/', '');
+//
+//    res.render(str, {
+//        title: appName,
+//        topic: "ร้านอาหาร",
+//        active: str
+//    });
+//});
 
 app.get('/allWorkouts', function(req, res) {
     var str = req.url.replace('/', '');
@@ -134,33 +134,38 @@ db.open(function (err) {
         }
     });
 
-    app.get('/cafeteria', function(req, res) {
-        var imgs = [];
-        var len;
-        var count;
-        var inCount = 0;
+    app.get('/allCafeterias', function(req, res) {
+        var count = 0;
 
-        findDoc(req.query.header, db, function(data) {
-            if (!data) {
-                res.send("The path does not existing.");
+        findDoc(db, function(data) {
+            var out = [];
 
-                return;
-            }
-            for (count = 0, len = data.images.length; count < len; count++) {
-                console.log("len :"+ len);
-                imgs.push('http://archie:3000/queryImg/' + data.images[count].valueOf());
+            for (var i = 0, length = data.length; i < length; i++) {
+                var record = {};
+                var imgs = [];
 
-                console.log(count);
-                if (count == (len - 1)) {
-                    //console.log(imgs);
-                    res.render("cafeteria", {
-                        title: appName,
-                        topic: req.query.header,
-                        images: imgs,
-                        header: data.header,
-                        detail: data.detail,
-                        time: data.time
-                    });
+                for (var j = 0, len = data[i].images.length; j < len; j++) {
+                    //console.log("len :"+ len);
+                    imgs.push('http://archie/queryImg/' + data[i].images[j].valueOf());
+
+                    //console.log(count);
+                    if (j == (len - 1)) {
+                        record.header = data[i].header;   
+                        record.detail = data[i].detail;
+                        record.time = data[i].time;
+                        record.images = imgs;
+
+                        out.push(record);
+
+                        if (i == (length - 1)) {
+                            //console.log(imgs);
+                            res.render("allList", {
+                                title: appName,
+                                topic: "ร้านอาหาร",
+                                records: out,
+                            });
+                        }
+                    }
                 }
             }
         });
@@ -177,7 +182,7 @@ db.open(function (err) {
             if (data) {
                 res.render('dormitories', {
                     title: appName,
-                    topic: "req.query.zone",
+                    topic: req.query.zone,
                     active: str,
                     records: data
                 });
@@ -192,21 +197,19 @@ app.listen(PORT, function() {
     console.log("listen on Port: ", PORT);
 });
 
-function findDoc(head, database, callback) {
-   var cursor = database.collection('documents').find({ header: head });
-   var data;
+function findDoc(database, callback) {
+   var cursor = database.collection('documents').find();
+   var data = [];
 
    cursor.each(function(err, doc) {
       assert.equal(err, null);
 
       if (doc != null) {
-          data = doc;
+          data.push(doc);
           //console.log(data);
       }
-      else if (data != undefined)
-          callback(data);
       else
-          callback(null);
+          callback(data);
    });
 };
 
@@ -219,7 +222,7 @@ function findDorm(curZone, database, callback) {
 
       if (doc != null) {
           data.push(doc);
-          console.log(doc);
+          //console.log(doc);
       }
       else if (data != undefined)
           callback(data);
